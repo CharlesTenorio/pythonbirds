@@ -27,7 +27,8 @@ if __name__== '__main__':
    for filho in charles.filhos:
        print(filho.nome)
 
-   charles.sobrenome = 'Tenorio'
+
+   charles.sobrenome = 'Tenorio da Silva'
    del charles.idade
    charles.olhos =1
    del charles.olhos
