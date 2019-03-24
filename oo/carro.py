@@ -1,5 +1,3 @@
-
-
 """
 Você deve crai um classe carro qeu vai possuir dois aributos compostos por outras duas classeses:
 1) Motor
@@ -99,17 +97,25 @@ class Motor:
 
    def frear(self):
        self.velocidade -=2
+       self.velocidade = max(0, self.velocidade)
 
+
+NORTE ='Norte'
+SUL = 'Leste'
+LESTE = 'Leste'
+OESTE = 'Oeste'
 
 class Direcao:
+    rota_direita_dct = {NORTE:LESTE, LESTE:SUL, SUL:OESTE, OESTE:NORTE}
+    rota_esquerda_dct = {NORTE:OESTE, LESTE:NORTE, SUL:LESTE, OESTE:SUL}
     def __init__(self):
-        self.valor= 'Norte'
+        self.valor= NORTE
 
-    def girar_a_direita(self, direcao_carro):
-           return self.calcular_direcao(self.valor, direcao_carro)
+    def girar_a_direita(self):
+        self.valor = self.rota_direita_dct[self.valor]
 
-    def girar_a_esquerda(self, direcao_carro):
-        return self.calcular_direcao(self.valor, direcao_carro)
+    def girar_a_esquerda(self):
+        self.valor = self.rota_esquerda_dct(self.valor)
 
     def calcular_direcao(self, posicao_atual, direcao):
         if direcao=='direita' and posicao_atual=='Norte':
