@@ -153,7 +153,6 @@ class ObstaculoTestes(TestCase):
         obstaculo.colidir(outro_ator_na_mesma_posicao)
         self.assertEqual(' ', obstaculo.caracter())
 
-
 class PorcoTestes(TestCase):
     """
     Esperado '@' como caracter de porco ativo e '+' como caracter de porco destruido
